@@ -1,0 +1,135 @@
+<!--
+AI is used as recomended in the assignment.
+Prompt: Give me a barebones HTML structure for my personal website without adding any additional sections. It should include the following: 
+1. Create a Navigation Bar add links to the Home, Hobbies, and Projects pages (html to be created in the same directory).
+2.Add a plave for an image in the left margin. 
+3.A place for text on the right of the image as shown. 
+4. Add a button to link to a Resume page below the description
+5. Add a footer for links
+
+AI CODE RESPONSE:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Personal Website</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="projects.html">Projects</a>
+        </div>
+    </nav>
+    <div class="content">
+        <img src="your-image.jpg" alt="My Photo">
+        <div>
+            <p>
+                Hi! Here is a text box.
+            </p>
+            <a href="resume.html">View My Resume</a>
+        </div>
+    </div>
+    <footer>
+        <a href="link.com">LINK HERE</a>
+    </footer>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me: Ian Martin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .content {
+      display: flex;
+      align-items: center;
+      padding: 40px;
+    }
+    .content img {
+      width: 200px;
+      height: auto;
+      margin-right: 30px;
+    }
+    #profileCarousel {
+      width: 400px;
+      height: 400px;
+      margin-right: 30px;
+      overflow: hidden;
+      align-items: center;
+    }
+    #profileCarousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html">Ian Martin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="hobbies.html">Hobbies</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        </ul>
+        <i class="bi bi-star-fill fs-3 text-warning"></i>
+      </div>
+    </div>
+  </nav>
+  <div class="content">
+    <div id="profileCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../resources/img/mypicture.png" class="d-block w-100" alt="Photo 1">
+        </div>
+        <div class="carousel-item">
+          <img src="../resources/img/culogo.png" class="d-block w-100" alt="Photo 2">
+        </div>
+        <div class="carousel-item">
+          <img src="../resources/img/computerscience.jpg" class="d-block w-100" alt="Photo 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#profileCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#profileCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    <div>
+      <p>Hello! I am Ian Martin, a current Computer Science major at the University of Colorado. I have a passion for technology and programming. Specifically, in the future I hope to design mobile apps and video games. On this page you can find more information about me and my passions.</p>
+      <a href="resume.html" class="btn btn-primary">View My Resume</a>
+    </div>
+  </div>
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>My Socials:</p>
+        <a href="https://github.com/IanMartin110" class="text-white mx-2"><i class="bi bi-github fs-4"></i></a>
+        <a href="https://www.linkedin.com/in/ian-martin-a32572325" class="text-white mx-2" target="_blank"><i class="bi bi-linkedin fs-4"></i></a>
+    </div>
+  </footer>
+</body>
+</html>

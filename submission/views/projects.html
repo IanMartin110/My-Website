@@ -1,0 +1,144 @@
+<!--
+AI is used as recomended in the assignment.
+Prompt: Give me a barebones HTML structure for my personal website without adding any additional sections. Use the Bootstrap documentation as reference to do the following:
+1.Create a Navigation Bar add links to the Home, Hobbies, and Projects pages.
+2.On the extreme right of the Navigation Bar add an icon, this can be an icon of your choice.
+3.Add at least 3 projects with images and description. Make sure to use the bootstrap grid system to correctly format the positioning.
+4.Add a footer with all social media links you would like to provide. Include at least one.
+
+AI CODE RESPONSE:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Personal Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html">MySite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hobbies.html">Hobbies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+        </ul>
+        <span class="fs-3 text-warning"><i class="bi bi-person-circle"></i></span>
+      </div>
+    </div>
+  </nav>
+  <div class="container my-5">
+    <div class="row g-4">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Project One</h5>
+            <p class="card-text">This project is interesting because it solves real-world problems with creative solutions.</p>
+          </div>
+        </div>
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Project Two</h5>
+            <p class="card-text">I enjoyed building this project because it helped me practice new technologies.</p>
+          </div>
+        </div>
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Project Three</h5>
+            <p class="card-text">This project is exciting because it demonstrates problem-solving and creativity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="bg-dark text-white text-center py-3">
+    <p>Connect with me:</p>
+    <a href="https://github.com/yourusername" class="text-white mx-2"><i class="bi bi-github fs-4"></i></a>
+    <a href="https://linkedin.com/in/yourusername" class="text-white mx-2"><i class="bi bi-linkedin fs-4"></i></a>
+    <a href="https://twitter.com/yourusername" class="text-white mx-2"><i class="bi bi-twitter fs-4"></i></a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Projects</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html">Ian Martin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="hobbies.html">Hobbies</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+        </ul>
+        <i class="bi bi-star-fill fs-3 text-warning"></i>
+      </div>
+    </div>
+  </nav>
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="../resources/img/nfc.jpg" class="card-img-top" alt="NFC Antenna">
+          <div class="card-body">
+            <h5 class="card-title">NFC Antenna</h5>
+            <p class="card-text">In a class on Human Computer Interaction I created an NFC antenna that would activate a light when signal was received.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="../resources/img/codeproject.png" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Coded Board Game</h5>
+            <p class="card-text">I created a board game with different characters and effects using VS Code and C++.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="../resources/img/touch.jpg" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Touch Sensor</h5>
+            <p class="card-text">In HCI class I also made a touch sensor that had an audio output.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>My Socials:</p>
+        <a href="https://github.com/IanMartin110" class="text-white mx-2"><i class="bi bi-github fs-4"></i></a>
+        <a href="https://www.linkedin.com/in/ian-martin-a32572325" class="text-white mx-2" target="_blank"><i class="bi bi-linkedin fs-4"></i></a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
