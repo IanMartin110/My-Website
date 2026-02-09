@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 4 - Calendar</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./resources/css/style.css">
+
+  <script>
+    (() => {
+      'use strict';
+      window.addEventListener('load', () => {
+        const forms = document.querySelectorAll('.needs-validation');
+        Array.from(forms).forEach(form => {
+          form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          });
+        });
+      });
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="row m-0">
+    <div class="col-2">
+      <div class="custom-container">
+        <button class="btn btn-primary mt-3" onclick="showModal()">Create Event</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="container-md container-fluid py-4 h-100">
+        <div id="calendar" class="row h-100">
+          <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="sunday"><div class="h6 text-center py-2">Sunday</div></div>
+          <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="monday"><div class="h6 text-center py-2">Monday</div></div>
+          <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="tuesday"><div class="h6 text-center py-2">Tuesday</div></div>
+          <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="wednesday"><div class="h6 text-center py-2">Wednesday</div></div>
+          <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="thursday"><div class="h6 text-center py-2">Thursday</div></div>
+          <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="friday"><div class="h6 text-center py-2">Friday</div></div>
+          <div class="col-sm m-1 bg-white rounded px-1 px-md-2" id="saturday"><div class="h6 text-center py-2">Saturday</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <form id="event_form" class="needs-validation" novalidate>
+
+          <div class="modal-header">
+            <h5 class="modal-title">Create Event</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Event Title</label>
+              <input id="event_title" class="form-control" required>
+              <div class="invalid-feedback">Enter a title.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Category</label>
+              <select id="event_category" class="form-select" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="work">Work</option>
+                <option value="personal">Social</option>
+                <option value="academic">Academic</option>
+                <option value="health">Health</option>
+                <option value="sports">Sports</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="invalid-feedback">Select a category.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Day of the Week</label>
+              <select id="event_weekday" class="form-select" required>
+                <option value="" disabled selected>Select a day</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+              </select>
+              <div class="invalid-feedback">Select a weekday.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Time</label>
+              <input type="time" id="event_time" class="form-control" required>
+              <div class="invalid-feedback">Choose a time.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Modality</label>
+              <select id="event_modality" class="form-select" required onchange="updateLocationOptions()">
+                <option value="" disabled selected>Select modality</option>
+                <option value="in-person">In-Person</option>
+                <option value="remote">Remote</option>
+              </select>
+              <div class="invalid-feedback">Select a modality.</div>
+            </div>
+            <div class="mb-3" id="locationSection">
+              <label class="form-label">Location</label>
+              <input id="event_location" class="form-control">
+              <div class="invalid-feedback">Enter a location.</div>
+            </div>
+            <div class="mb-3" id="remoteSection">
+              <label class="form-label">Remote URL</label>
+              <input
+                id="event_remote_url"
+                class="form-control"
+                pattern="https?:\/\/.+">
+              <div class="invalid-feedback">Enter a valid URL.</div>
+            </div>
+            <div class="mb-3" id="attendeesSection">
+              <label class="form-label">Attendees</label>
+              <input
+                id="event_attendees"
+                class="form-control"
+                placeholder="enter names separated by commas"
+                required>
+              <div class="invalid-feedback">Enter attendees.</div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" onclick="saveEvent()">Save Event</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./resources/js/script.js"></script>
+    </body>
+</html>
