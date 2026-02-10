@@ -70,7 +70,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
 
-        <form id="event_form" class="needs-validation" novalidate>
+                <form id="event_form" class="needs-validation" novalidate>
 
           <div class="modal-header">
             <h5 class="modal-title">Create Event</h5>
@@ -125,7 +125,7 @@
             </div>
             <div class="mb-3" id="locationSection">
               <label class="form-label">Location</label>
-              <input id="event_location" class="form-control">
+              <input id="event_location" class="form-control" placeholder="enter a location" required>
               <div class="invalid-feedback">Enter a location.</div>
             </div>
             <div class="mb-3" id="remoteSection">
@@ -133,7 +133,9 @@
               <input
                 id="event_remote_url"
                 class="form-control"
-                pattern="https?:\/\/.+">
+                placeholder="enter a valid url link"
+                pattern="https?:\/\/.+"
+                >
               <div class="invalid-feedback">Enter a valid URL.</div>
             </div>
             <div class="mb-3" id="attendeesSection">
